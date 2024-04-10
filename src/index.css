@@ -3,7 +3,27 @@
 @tailwind utilities;
 
 body {
-  min-height: 100vh;
   background: linear-gradient(145deg, #f3c57f 0%, #c9437a 46%, #6b42b4 100%);
-  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.circleBorder {
+  border-radius: 50%;
+  box-shadow: inset 4px 3px 3px rgba(251, 212, 164, 0.4),
+    0 0px 1px rgba(121, 78, 9, 0.4);
+}
+
+.rectangleBorder {
+  box-shadow: inset 4px 4px 6px rgba(251, 212, 164, 0.4),
+    0 0px 1px rgba(121, 78, 9, 0.1);
+  border-radius: 12px;
+  padding: 2px;
+}
+
+.scroller {
+  animation: 0.2s ease-in y;
+}
+
+.scroller .card:nth-child(2) {
+  transform: scale(1.4, 1.4);
 }
