@@ -11,7 +11,6 @@ export const useDragScroll = () => {
 
   const handleMouseDown = useCallback(
     (e) => {
-      console.log(e, node, "Mouse down");
       if (!node) {
         return;
       }

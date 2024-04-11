@@ -1,7 +1,8 @@
+import { forwardRef } from "react";
 import Circle from "../atoms/Circle";
 import Rectangle from "../atoms/Rectangle";
 
-function Card() {
+const Card = forwardRef(() => {
   return (
     <div className="card mx-auto flex flex-col justify-start align-middle gap-5 p-5 w-[400px] h-[300px] bg-white/20 rounded-xl ">
       <Rectangle width={"auto"} height={100} className={""} />
@@ -14,6 +15,6 @@ function Card() {
       </div>
     </div>
   );
-}
+});
 
 export default Card;

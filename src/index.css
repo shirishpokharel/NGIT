@@ -4,7 +4,7 @@
 
 body {
   background: linear-gradient(145deg, #f3c57f 0%, #c9437a 46%, #6b42b4 100%);
-  overflow: hidden;
+  /* overflow: auto; */
 }
 
 .circleBorder {
@@ -20,10 +20,54 @@ body {
   padding: 2px;
 }
 
-.scroller {
-  animation: 0.2s ease-in y;
+.card {
+  /* animation: slideUp 5s infinite; */
 }
 
-.scroller .card:nth-child(2) {
-  transform: scale(1.4, 1.4);
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%) scale(0.5);
+    opacity: 0;
+  }
+
+  5%,
+  20% {
+    transform: translateY(100%) scale(0.7);
+    opacity: 0.4;
+  }
+
+  25%,
+  40% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  45%,
+  60% {
+    transform: translateY(-100%) scale(0.7);
+    opacity: 0.4;
+  }
+
+  65%,
+  100% {
+    transform: translateY(-100%) scale(0.5);
+    opacity: 0;
+  }
 }
+
+#scroller {
+  animation: 0.2s ease-in y;
+
+  -webkit-mask-box-image: -webkit-linear-gradient(
+    top,
+    transparent,
+    transparent 0,
+    white 10%,
+    white 80%,
+    transparent 100%
+  );
+}
+
+/* .scroller .card:nth-child(2) {
+  transform: scale(1.4, 1.4);
+} */
