@@ -4,9 +4,9 @@ import Rectangle from "../atoms/Rectangle";
 
 const Card = forwardRef(() => {
   return (
-    <div className="card mx-auto flex flex-col justify-start align-middle gap-5 p-5 w-[400px] h-[300px] bg-white/20 rounded-xl ">
+    <div className="card mx-auto flex flex-col justify-start align-middle gap-5 p-5 w-[400px] h-[350px] bg-white/20 rounded-xl ">
       <Rectangle width={"auto"} height={100} className={""} />
-      <div className="flex flex-1 justify-center align-middle gap-2">
+      <div className="flex flex-1 justify-start align-middle gap-2">
         <Circle />
         <div className="flex flex-1 flex-col gap-3">
           <Rectangle width={"auto"} height={16} />

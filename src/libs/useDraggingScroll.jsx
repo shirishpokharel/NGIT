@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useCallback } from "react";
 import { useState } from "react";
 
-export const useDragScroll = () => {
+export const useDragScroll = (currentIndex) => {
   const [node, setNode] = useState(null);
+  const [index, setIndex] = useState(currentIndex);
 
   const refs = useCallback((nodeEle) => {
     setNode(nodeEle);
@@ -27,6 +28,11 @@ export const useDragScroll = () => {
         node.scrollTop = startPos.top - dy;
         node.scrollLeft = startPos.left - dx;
         updateCursor(node);
+        if (startPos?.top > node?.scrollTop) {
+          setIndex(index + 1);
+        } else {
+          setIndex(index - 1);
+        }
       };
 
       const handleMouseUp = () => {
@@ -97,5 +103,5 @@ export const useDragScroll = () => {
     };
   }, [node]);
 
-  return [refs];
+  return [refs, index];
 };

@@ -3,11 +3,12 @@ import { useDragScroll } from "../../libs/useDraggingScroll.jsx";
 import { createRef, useCallback, useEffect, useRef, useState } from "react";
 
 const Scroller = () => {
-  const [refs] = useDragScroll();
+  const [currentActiveCard, setCurrentActiveCard] = useState(2);
+  const [refs, index] = useDragScroll(currentActiveCard);
+
+  console.log(index, "Index");
   const newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const itemsRef = useRef([]);
-
-  const [currentActiveCard, setCurrentActiveCard] = useState(2);
 
   if (itemsRef.current.length !== newArr.length) {
     // add or remove refs
@@ -23,11 +24,16 @@ const Scroller = () => {
 
       var styleSheet = document.styleSheets[0];
       var rule =
-        "#scroller .card:nth-child(" + i + ")  { transform: scale(1.4,1.4); }";
+        "#scroller .card:nth-child(" +
+        currentActiveCard +
+        ")  { transform: scale(1.4,1.4); animation: 1s ease-out }";
       styleSheet.insertRule(rule, 1);
+
+      itemsRef?.[currentActiveCard]?.current?.scrollIntoView();
     },
     [currentActiveCard]
   );
+
   useEffect(() => {
     handleScrollWithAnimation();
   }, [handleScrollWithAnimation]);
@@ -44,15 +50,7 @@ const Scroller = () => {
       }}
     >
       {newArr?.map((item) => {
-        return (
-          <Card
-            key={item}
-            ref={itemsRef.current[item]}
-            onClick={(e) => {
-              handleScrollWithAnimation();
-            }}
-          />
-        );
+        return <Card key={item} ref={itemsRef.current[item]} />;
       })}
     </div>
   );
