@@ -32,18 +32,6 @@ const Scroller = () => {
     handleScrollWithAnimation();
   }, [handleScrollWithAnimation]);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", ()=>{
-  //     handleScrollWithAnimation
-  //   });
-
-  //   return () => {
-  //     window.removeEventListener("scroll", ()=>{
-  //       handleScrollWithAnimation
-  //     });
-  //   };
-  // }, [handleScrollWithAnimation]);
-
   return (
     <div
       id="scroller"
