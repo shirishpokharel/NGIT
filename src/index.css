@@ -3,25 +3,23 @@
 @tailwind utilities;
 
 body {
-  background: linear-gradient(145deg, #f3c57f 0%, #c9437a 46%, #6b42b4 100%);
+  background: linear-gradient(145deg, #fec671 2%, #cf3072 46%, #6b42b4 100%);
   /* overflow: auto; */
 }
 
 .circleBorder {
   border-radius: 50%;
-  box-shadow: inset 4px 3px 3px rgba(251, 212, 164, 0.4),
-    0 0px 1px rgba(121, 78, 9, 0.4);
+  border-top: 3px solid rgba(243, 171, 163, 0.8);
+  border-left: 3px solid rgba(243, 171, 163, 0.8);
+  box-shadow: inset 1px 1px 6px rgba(243, 171, 163, 0.8),
+    0px 0px 1px rgba(121, 78, 9, 0.1);
 }
 
 .rectangleBorder {
-  box-shadow: inset 4px 4px 6px rgba(251, 212, 164, 0.4),
-    0 0px 1px rgba(121, 78, 9, 0.1);
-  border-radius: 12px;
-  padding: 2px;
-}
-
-.card {
-  /* animation: slideUp 5s infinite; */
+  border-top: 3px solid rgba(243, 171, 163, 0.8);
+  border-left: 3px solid rgba(243, 171, 163, 0.8);
+  box-shadow: inset 1px 1px 6px rgba(243, 171, 163, 0.8),
+    0px 0px 1px rgba(121, 78, 9, 0.1);
 }
 
 @keyframes slideUp {

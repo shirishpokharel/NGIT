@@ -41,7 +41,7 @@ const Scroller = () => {
   return (
     <div
       id="scroller"
-      className=" mt-5 cursor-grab touch-none flex flex-1 flex-col gap-[80px]"
+      className=" mt-5 cursor-grab touch-none flex flex-col gap-[100px]"
       ref={refs}
       style={{
         overflow: "hidden",
