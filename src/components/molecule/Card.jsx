@@ -4,7 +4,7 @@ import Rectangle from "../atoms/Rectangle";
 
 const Card = forwardRef((props, ref) => {
   return (
-    <div className="card mx-auto rectangleBorder p-[2px]  bg-[rgba(227,115,123,0.5)] backdrop-blur-2xl !rounded-[25px] ">
+    <div className="card mx-auto rectangleBorder p-[2px]  bg-[rgba(227,115,123,0.5)] backdrop-blur-2xl !rounded-[25px] w-[17em]">
       <div className="flex flex-col h-[15em] w-[16rem] gap-3 p-[10px]">
         <Rectangle width={"auto"} height={100} className={""} />
         <div className="flex  justify-start align-middle gap-2">
@@ -18,7 +18,7 @@ const Card = forwardRef((props, ref) => {
             />
           </div>
         </div>
-        {props?.item?.name}
+        {/* {props?.item || "hello"} */}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@
 body {
   background: linear-gradient(145deg, #fec671 2%, #cf3072 46%, #6b42b4 100%);
   /* overflow: auto; */
-  max-height: 100vh;
+  overflow: auto;
 }
 
 .slider-container::-webkit-scrollbar {
@@ -39,61 +39,23 @@ body {
     0px 0px 1px rgba(121, 78, 9, 0.1);
 }
 
-.slick-slide:not(.slick-active) {
-  position: relative;
-  z-index: 997;
-}
-.slick-slide.slick-active:not(.slick-current) .card {
-  position: relative;
-  z-index: 998;
-  transform: scale(1.22);
-  transition: 0.25s;
-}
-.slick-slide.slick-active.slick-current.card {
-  position: relative;
-  z-index: 999;
-  transform: scale(1.6);
-  transition: 0.25s;
-}
-.slick-slide.slick-active:not(.slick-current) .image,
-.slick-slide.slick-active.slick-current .image,
-.slick-slide:not(.slick-active) .image {
-  width: 100% !important;
+.carousel .slider-wrapper.axis-vertical {
+  height: 100vh !important;
 }
 
-@keyframes slideUp {
-  0% {
-    transform: translateY(100%) scale(0.5);
-    opacity: 0;
-  }
+.carousel .slider {
+  display: flex;
+  gap: 35px;
+}
 
-  5%,
-  20% {
-    transform: translateY(100%) scale(0.7);
-    opacity: 0.4;
-  }
+.slide.selected {
+  transform-origin: center;
 
-  25%,
-  40% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-
-  45%,
-  60% {
-    transform: translateY(-100%) scale(0.7);
-    opacity: 0.4;
-  }
-
-  65%,
-  100% {
-    transform: translateY(-100%) scale(0.5);
-    opacity: 0;
-  }
+  transform: scale(1.4, 1.4);
 }
 
 #scroller {
-  animation: 0.2s ease-in y;
+  animation: 0.8s ease-out y;
 
   -webkit-mask-box-image: -webkit-linear-gradient(
     top,
