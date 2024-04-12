@@ -5,6 +5,23 @@
 body {
   background: linear-gradient(145deg, #fec671 2%, #cf3072 46%, #6b42b4 100%);
   /* overflow: auto; */
+  max-height: 100vh;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.slider-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.sliderOverflow {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 98vh !important;
 }
 
 .circleBorder {
@@ -20,6 +37,28 @@ body {
   border-left: 3px solid rgba(243, 171, 163, 0.8);
   box-shadow: inset 1px 1px 6px rgba(243, 171, 163, 0.8),
     0px 0px 1px rgba(121, 78, 9, 0.1);
+}
+
+.slick-slide:not(.slick-active) {
+  position: relative;
+  z-index: 997;
+}
+.slick-slide.slick-active:not(.slick-current) .card {
+  position: relative;
+  z-index: 998;
+  transform: scale(1.22);
+  transition: 0.25s;
+}
+.slick-slide.slick-active.slick-current.card {
+  position: relative;
+  z-index: 999;
+  transform: scale(1.6);
+  transition: 0.25s;
+}
+.slick-slide.slick-active:not(.slick-current) .image,
+.slick-slide.slick-active.slick-current .image,
+.slick-slide:not(.slick-active) .image {
+  width: 100% !important;
 }
 
 @keyframes slideUp {

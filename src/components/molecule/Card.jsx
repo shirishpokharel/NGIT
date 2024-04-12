@@ -2,10 +2,10 @@ import { forwardRef } from "react";
 import Circle from "../atoms/Circle";
 import Rectangle from "../atoms/Rectangle";
 
-const Card = forwardRef(() => {
+const Card = forwardRef((props, ref) => {
   return (
-    <div className="mx-auto rectangleBorder p-[2px]  bg-[rgba(227,115,123,0.5)] backdrop-blur-2xl !rounded-[30px] ">
-      <div className="flex flex-col h-[18em] w-[19rem] gap-3 p-[20px]">
+    <div className="card mx-auto rectangleBorder p-[2px]  bg-[rgba(227,115,123,0.5)] backdrop-blur-2xl !rounded-[25px] ">
+      <div className="flex flex-col h-[15em] w-[16rem] gap-3 p-[10px]">
         <Rectangle width={"auto"} height={100} className={""} />
         <div className="flex  justify-start align-middle gap-2">
           <Circle />
@@ -18,6 +18,7 @@ const Card = forwardRef(() => {
             />
           </div>
         </div>
+        {props?.item?.name}
       </div>
     </div>
   );
